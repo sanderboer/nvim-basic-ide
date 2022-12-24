@@ -17,16 +17,26 @@ vim.g.mapleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<S-Left>", "<C-w>h", opts)
+keymap("n", "<S-Down>", "<C-w>j", opts)
+keymap("n", "<S-Up>", "<C-w>k", opts)
+keymap("n", "<S-Right>", "<C-w>l", opts)
+keymap("n", "<A-Right>", ":bnext<cr>", opts)
+keymap("n", "<A-Left>", ":bprev<cr>", opts)
+keymap("i", "<A-s>", "<Esc>:w!<Esc>i", opts)
+keymap("n", "<A-s>", "<Esc>:w!<Esc>", opts)
+keymap("n", "<M-1>", "<esc>:only<CR>", opts)
+keymap("n", "<M-2>", "<esc>:split<cr>", opts)
+keymap("n", "<M-3>", "<esc>:vsplit<cr>", opts)
+
+keymap("n", "<leader>t", "<Cmd>exe v:count1 . 'ToggleTerm'<CR>", opts)
+keymap("t", "<leader>t", "<Cmd>exe v:count1 . 'ToggleTerm'<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)

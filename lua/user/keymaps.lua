@@ -24,10 +24,10 @@ keymap("n", "<S-Right>", "<C-w>l", opts)
 keymap("n", "<A-Right>", ":bnext<cr>", opts)
 keymap("n", "<A-Left>", ":bprev<cr>", opts)
 keymap("i", "<A-s>", "<Esc>:w!<Esc>i", opts)
-keymap("n", "<A-s>", "<Esc>:w!<Esc>", opts)
-keymap("n", "<M-1>", "<esc>:only<CR>", opts)
-keymap("n", "<M-2>", "<esc>:split<cr>", opts)
-keymap("n", "<M-3>", "<esc>:vsplit<cr>", opts)
+keymap("n", "<A-s>", ":w!<cr>", opts)
+keymap("n", "<M-1>", ":only<CR>", opts)
+keymap("n", "<M-2>", ":split<cr>", opts)
+keymap("n", "<M-3>", ":vsplit<cr>", opts)
 
 keymap("n", "<leader>t", "<Cmd>exe v:count1 . 'ToggleTerm'<CR>", opts)
 keymap("t", "<leader>t", "<Cmd>exe v:count1 . 'ToggleTerm'<CR>", opts)
@@ -46,10 +46,17 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<A-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
+
+-- move visual block 
+keymap("v", "<S-Down>", ":m '>+1<CR>gv=gv")
+keymap("v", "<S-Up>", ":m '<-2<CR>gv=gv")
+keymap("v", "<S-Left>", "<gv")
+keymap("v", "<S-Right>", ">gv")
+
 
 -- Insert --
 -- Press jk fast to enter

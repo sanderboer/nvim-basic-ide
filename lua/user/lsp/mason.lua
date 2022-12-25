@@ -1,4 +1,5 @@
 local servers = {
+  "volar",
 	"sumneko_lua",
 	"cssls",
 	"html",
@@ -13,9 +14,9 @@ local settings = {
 	ui = {
 		border = "none",
 		icons = {
-			package_installed = "◍",
-			package_pending = "◍",
-			package_uninstalled = "◍",
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "x",
 		},
 	},
 	log_level = vim.log.levels.INFO,
